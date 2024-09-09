@@ -1,5 +1,5 @@
-# Scientific Project Management Tool (ScienceHUB)
-
+# Scientific Project Management Tool: ScienceHUB
+---
 **Dies ist eine einfache Projektverwaltungsanwendung, die auf Flask basiert. Sie ermöglicht die Erstellung, Bearbeitung und Verwaltung von Projekten sowie die Verwaltung von Projektmitgliedern und Geldgebern (Fundern). Benutzer können Projekte anpassen, Mitgliederrollen ändern, und Projektdaten speichern.**
 
 
