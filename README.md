@@ -13,10 +13,10 @@
 ## Docker Installation
 ---
 ### Image erstellen
-* docker build -t sciencehub-app:latest .
+* docker build -t website  . 
 
 ### Docker-Container starten
-* docker run -d -p 5000:5000 --name sciencehub-container sciencehub-app:latest
+* docker run -d -p 8000:8000 --name container-fuer-website website
 
 ### Extra Docker Befehle
 * Alle laufende Container anzeigen: docker ps
