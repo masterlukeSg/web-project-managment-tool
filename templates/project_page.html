@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/179535dd9d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/project_page_style.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="page_header">
+        <div class="logo_return">
+            <img src="../static/logo.png" alt="SiteLogo" onclick="window.location.href='/NewProject/back_to_dashboard';">
+        </div>
+        <div class="log_out_return_button">
+            <i class="fa-solid fa-arrow-left" onclick="window.location.href='/NewProject/back_to_dashboard';"></i>
+            <i class="fa-solid fa-right-from-bracket" onclick="window.location.href='/log_out';"></i>
+        </div>
+    </div>
+    <div class="project_page">
+        <div class="project_name_buttons">
+            <div class="project_name_status">
+                <h1>{{ project_name }}</h1>
+                <p>{{ status }}</p>
+            </div>
+            <div class="project_buttons">          
+                <div class="edit_project_button">
+                    <button onclick="window.location.href='/edit_project/{{project_id}}';"><i class="fa-solid fa-pencil"></i>EDIT PROJECT</button>
+                </div>
+                <div class="archive_project_button">
+                    <button onclick="window.location.href='/archive_project/{{project_id}}';"><i class="fa-solid fa-box-archive"></i></button>
+                </div>
+                <div class="delete_project_button">
+                    <button onclick="window.location.href='/delete_project/{{project_id}}';"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="project_description_box" id="scrollable">
+            <h2>Project description: </h2>
+            <p>{{ description }}</p>
+        </div>        
+        <div class="colaborators_funder_ressource_boxes">
+            <div class="coll_funder_box">
+                <h3>Collaborators</h3>
+                <div class="coll_box">
+                    <div class="option_line">
+                        <div class="search_container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input id="searchbar" type="search" placeholder="search user" onkeyup="filter_users()"></input>
+                        </div>
+                    </div>
+                    <div class="collaborator_table" id="scrollable">
+                        {% if members %}
+                            {% for member, role in members %}
+                            <div class="collaborator_line">
+                                <i class="fa-solid fa-user"></i>
+                                <p id="user">{{ member }}</p> <!-- Anzeige des Mitgliednamens -->
+                                <p>{{ role }}</p> <!-- Anzeige der Rolle des Mitglieds -->
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="collaborator_line">
+                                <p>No collaborators added yet</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+
+                    <script>
+                        function filter_users() {
+                            const search_term = document.getElementById('searchbar').value.toLowerCase();
+                            const collaborator_table = document.getElementsByClassName('collaborator_table')[0];
+                            const collaborator_lines = collaborator_table.getElementsByClassName('collaborator_line');
+
+                            for (let i = 0; i < collaborator_lines.length; i++){
+                                let user_name = collaborator_lines[i].querySelector('#user').textContent.toLowerCase();
+                                if (user_name.includes(search_term)){
+                                    collaborator_lines[i].style.display = "";
+                                } else {
+                                    collaborator_lines[i].style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+                <h3>Funding</h3>
+                <div class="funder_box" id="scrollable">
+                    {% if funder %}
+                        {% set funders = funder.split(',') %}
+                        <div class="sum">{{ funders|length }} Funders</div>
+                        {% for funder in funders %}
+                        <div class="funder_line">
+                            <p>{{ funder }}</p>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="sum">No Funders</div>
+                    {% endif %}
+                </div>
+                
+            </div>
+            <div class="ressource">
+                <p>Ressourcen</p>
+                <div class="ressources_box">
+                    <div class="ressources_up">
+                        <img  style="margin-right: 2rem;" src="../static/Webex.png" alt="webex">
+                        <img style="margin-left: 2rem;" src="../static/sciebo.svg.png" alt="sciebo">
+                    </div>
+                    <div class="ressources_down">
+                        <img src="../static/Asana.png" alt="asana">
+                    </div>
+                    <div class="ressources_button">
+                        <button type="button">assign ressources</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scrollableElements = document.querySelectorAll('#scrollable');
+
+        scrollableElements.forEach(element => {
+            element.addEventListener('scroll', () => {
+                element.classList.add('scrolling');
+                clearTimeout(element.scrollTimeout);
+                element.scrollTimeout = setTimeout(() => {
+                    element.classList.remove('scrolling');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>    

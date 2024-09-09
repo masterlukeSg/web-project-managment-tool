@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background-color: #2D2C34;
+
+    font-family: Inter;
+   
+    /* vh = volle Höhe des Browser-Fensters */
+    height: 85vh;
+}
+
+.website {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#head {
+    font-size: 60px;
+    letter-spacing: -2px;
+    color: #CDC4DE;
+
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B7AADF;
+    height: 560px;
+    width: 469px;
+}
+
+.flashes{
+    list-style-type: none;
+    color: red;
+    margin-right: 42px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #B7AADF;
+
+    height: 545px;
+    width: 469px;
+}
+
+h1 {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 50px;
+
+    font-family: Inter;
+    font-weight: bold;
+    color: black;
+}
+
+.username_input,
+.password_input {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 40px;
+    right: 10px;
+}
+
+.password_input {
+    margin-top: 40px;
+}
+
+.username_input i,
+.password_input i {
+    position: relative;
+
+    left: 29px;
+    color: #CBCBCB;
+}
+
+#username,
+#password {
+    background-color: #73698F;
+    padding-top: 5%;
+    padding: 0 0 0 31px;
+
+    width: 200px;
+    height: 50px;
+
+    border-radius: 17px;
+    border: none;
+
+    color: white;
+    font-size: 15px;
+}
+
+
+
+
+
+.login_button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.login_button button {
+    width: 225px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: #443471;
+    border: none;
+    border-radius: 100px;
+}
+
+.login_button button:hover {
+    background-color: #593aaf;
+    cursor: pointer;
+}
+
+.sign_up_text{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+/*#no_account {
+    padding-top: 5px;
+    font-weight: bolder;
+    text-align: center;
+    margin-right: 32px;
+
+}*/
+
+#sign_up {
+
+    text-align: center;
+}

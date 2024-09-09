@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/179535dd9d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/NewProjectUI.css">
+    <title>NewProjectUI</title>
+</head>
+<body>
+    <div class="NP_UI">
+        <div class="NP_UI_Heading">
+            <img src="../static/logo.png" alt="SiteLogo" onclick="window.location.href='/NewProject/back_to_dashboard';">
+            <h1>scienceHUB</h1>
+        </div>
+        <hr>
+        <div class="NP_UI_input">
+            <input id="ProNam" type="text" placeholder="project name" value = "{{ name_value }}" name="ProNam" maxlength="50"></input>
+            <textarea id="ProDes" type="text" placeholder="description" name="ProDes" maxlength="750">{{ description_value }}</textarea>
+            <script>
+                document.getElementById('ProNam').addEventListener('input', save_data);
+                document.getElementById('ProDes').addEventListener('input', save_data);
+
+                function save_data() {
+                    let project_name = document.getElementById('ProNam').value;
+                    let project_description = document.getElementById('ProDes').value;
+
+                    let data = {
+                        project_name: project_name,
+                        project_description: project_description
+                    };
+
+                    fetch("/NewProject/save_data", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error', error)
+                    });
+                }
+                    
+            </script>
+            <div class="NP_UI_horinput">
+                <div class="NP_UI_addMF">
+                    <form class="addMF_input" method="POST" action="/NewProject/add_user">
+                            <input id="nameinput" type="text" name="name" maxlength="25" placeholder="add member" required>
+                            <button id="namesubmit" type="submit"><i class="fa-solid fa-user-plus"></i></button> 
+                            <div id="autocomplete-list" class="autocomplete-suggestions"></div>
+                    </form>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const name_input = document.getElementById('nameinput');
+                            const autocomplete_list = document.getElementById('autocomplete-list');
+                
+                            name_input.addEventListener('input', function() {
+                                const query = this.value;
+                                if (query.length > 0) {
+                                    fetch(`/NewProject/search_users?q=${query}`)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            autocomplete_list.innerHTML = '';
+                                            data.forEach(user => {
+                                                const suggestion = document.createElement('div');
+                                                suggestion.classList.add('autocomplete-suggestion');
+                                                suggestion.textContent = "+  " + user.username;
+                                                suggestion.addEventListener('click', function() {
+                                                    name_input.value = user.username;
+                                                    autocomplete_list.innerHTML = '';
+                                                });
+                                                autocomplete_list.appendChild(suggestion);
+                                            });
+                                        });
+                                } else {
+                                    autocomplete_list.innerHTML = '';
+                                }
+                            });
+                
+                            document.addEventListener('click', function(event) {
+                                if (!autocomplete_list.contains(event.target) && event.target !== name_input) {
+                                    autocomplete_list.innerHTML = '';
+                                }
+                            });
+                        });
+                    </script>
+                    <div class="flash_list">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <ul class="flashes">
+                                    {% for message in messages %}
+                                    <li>! {{ message }} !</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <ul class="mf_list">
+                        {% for u in user %}
+                            <li>{{ u }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="NP_UI_addMF">
+                    <form class="addMF_input" method="POST" action="/NewProject/add_funding">
+                        <input id="nameinput" type="text" name="name" maxlength="25" placeholder="add funding" required>
+                        <button id="namesubmit" type="submit"><i class="fa-solid fa-dollar-sign"></i></button>
+                    </form>
+                    <ul class="mf_list">
+                        {% for f in funder %}
+                            <li>{{ f }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="buttons_cr_ca">
+            <div class="NP_UI_back_to_d">
+                <button type="button" onclick="window.location.href='/NewProject/back_to_dashboard';"><i class="fa-solid fa-xmark"></i><p>cancel</p></button>
+            </div>
+            <div class="NP_UI_create">
+                <button type="button" onclick="window.location.href='/NewProject/create_project';"><i class="fa-solid fa-file-circle-plus"></i><p>create project</p></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

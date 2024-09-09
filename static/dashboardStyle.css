@@ -1,0 +1,208 @@
+/* font: Inter regular, semiBold(600), bold */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    background-color: #2D2C34;
+
+    /* um gegen unschärfe beim zoomen des textet vor zu gehen*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    zoom: 75%;
+}
+
+.title_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    
+    
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    width: 110px;
+    height: 110px;
+}
+
+h1 {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+    margin-left: 5px;
+}
+
+
+
+.log_out_button i{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.projects_table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: auto;
+}
+
+caption {
+    text-align: left;
+    /* Ausrichtung des Titels */
+    caption-side: top;
+    /* Platzierung des Titels */
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+.captioncontent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.captioncontent h2 {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 75px;
+
+    height: 0px;
+    outline: none;
+    border: none;
+    margin-top: 90px;
+}
+
+.captioncontent button {
+    display: flex;
+    background-color: white;
+
+
+    height: 50px;
+    width: 210px;
+    outline: none;
+
+
+    border-radius: 8px;
+    border: none;
+
+    margin-top: 150px;
+    text-align: center;
+    cursor: pointer;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.captioncontent button:hover {
+    background-color: #389678;
+    outline: 1px solid #389678;
+    color: white;
+    transform: scale(1.12);
+}
+
+.new_project_button i {
+    font-size: 28px;
+}
+
+/* Stil für den Text im Button */
+.button_text {
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 12px;
+
+
+    display: inline-block;
+    position: relative;
+
+}
+
+hr {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+table tbody {
+    border-top: 30px solid #2D2C34;
+}
+
+.projects_table tr {
+    text-align: center;
+    font-family: Inter;
+    font-weight: normal;
+
+    border-bottom: 15px solid #2D2C34;
+    background-color: #CDC4DE;
+}
+
+.projects_table tr:hover {
+    background-color: white;
+}
+
+
+.projects_table th,
+.projects_table td {
+    padding: 20px;
+    border: none;
+
+}
+
+.projects_table th {
+    cursor: default;
+    font-size: 30px;
+    background-color: #CDC4DE;
+}
+
+.projects_table td {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.projects_button {
+    background-color: white;
+    border: none;
+    padding: 0;
+}
+
+.projects_name {
+    font: Inter;
+    font-weight: bold;
+}
+
+.flash-messages {
+    text-align: center;
+    width: 90%;
+    margin: 30px auto 0 auto; /* Oben 30px Abstand, zentriert */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #CDC4DE; /* Hintergrundfarbe wie in der Tabelle */
+    color: #000000; /* Textfarbe */
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 15px solid #000000; /* Unterer Rand wie in der Tabelle */
+}

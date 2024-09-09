@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/dashboardStyle.css">
+    <script src="https://kit.fontawesome.com/179535dd9d.js" crossorigin="anonymous"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+<div class="title_row">
+    <div class="title">
+        <img alt="logo" src="../static/logo.png" class="logo">
+        <h1>scienceHUB</h1>
+    </div>
+    <div class="log_out_button">
+        <i class="fa-solid fa-right-from-bracket" onclick="window.location.href='/log_out';"></i>
+    </div>
+</div>
+   
+<div class="table">
+    <table class="projects_table">
+        <caption>
+            <div class="captioncontent">
+                <h2>Projects</h2>
+                <button class="new_project_button" type="button" onclick="window.location.href='/NewProject';">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span class="button_text">new project</span>
+                </button>
+            </div>
+            <hr>
+        </caption>
+        
+        <thead>
+            <tr>
+                <th>project name</th>
+                <th>status</th>
+                <th>role</th>
+                <th>creator + members</th>
+                <th>created on</th>
+            </tr>
+        </thead>
+
+        <!-- Flash Nachrichten Bereich direkt unter der Kopfzeile der Tabelle -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <tr class="flash-messages">
+                <td colspan="5"> <!-- Verwenden Sie colspan, um die Nachricht über alle Spalten zu strecken -->
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endif %}
+        {% endwith %}
+        
+        <tbody>
+            <!-- Hier werden von python die Daten eingesetzt -->
+            {% for list in text_for_column %}
+            <tr class="projects_button" onclick="window.location.href='/project/{{list[5]}}';">
+                <td class="projects_name">{{list[0]}}</td>
+                <td>{{list[1]}}</td>
+                <td>{{list[2]}}</td>
+                <td>{{list[3]}}</td>
+                <td>{{list[4]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

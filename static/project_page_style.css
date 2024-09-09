@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body{
+    background-color: #2d2c37;
+    color: white;
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page_header img{
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.page_header i{
+    font-size: 40px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.project_page{
+    display: flex;
+    flex-direction: column;
+}
+
+.project_name_buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 3rem;
+    border-bottom: white solid 5px;
+}
+
+
+.project_buttons, .project_name_status{
+    display: flex;
+    flex-direction: row;
+}
+
+.project_name_status h1{
+    font-size: 48px;
+    letter-spacing: -2.0px;
+    margin-bottom: 3px;
+}
+
+.project_name_status p{
+    margin-left: 10px;
+    margin-top: 70px;
+    font-size: 16px;
+}
+
+.edit_project_button{
+    display: flex;
+    flex-direction: row;
+    margin-left: 41rem;
+    margin-bottom: -35px;
+}
+
+.edit_project_button button {
+    height: 40px;
+    width: 200px;
+    font-size:18px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #1e7617;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.archive_project_button, .delete_project_button{
+    margin-left: 2rem;
+    margin-bottom: -35px;
+}
+
+.archive_project_button button, .delete_project_button button{
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.archive_project_button button{
+    background-color: #796e6e;
+}
+
+.delete_project_button button{
+    background-color: #900606;
+}
+
+.project_description_box{
+    margin-left: 3rem;
+    color: white;
+    background-color: inherit;
+    margin-top: 15px;
+    height: 120px;
+    border: white 2px solid;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.project_description_box h2{
+    font-size: 24px;
+    text-decoration: underline;
+    margin-top: 3px;
+}
+
+.project_description_box p{
+    font-size: 18px;
+    margin-top: -12px;
+
+}
+
+.colaborators_funder_ressource_boxes{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.coll_funder_box{
+    display: flex;
+    flex-direction: column;
+    width: 680px;
+}
+
+.coll_funder_box h3{
+    font-size: 38px;
+}
+
+.coll_box{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    margin-top: -1.5rem;
+}
+
+.option_line{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 2px solid white;
+}
+
+.search_container{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+#searchbar{
+    width: 180px;
+    font-size: 18px;
+    height: 30px;
+    border: none;
+    padding-left: 25px;
+    background-color: inherit;
+    box-sizing: border-box;
+    color: white;
+}
+
+.search_container i{
+    position: absolute;
+    margin-left: 3px;
+    font-size: 14px;
+    color: white;
+}
+
+
+.collaborator_table{
+    display: flex;
+    flex-direction: column;
+    height: 440px;
+    overflow-y: scroll;
+}
+
+.collaborator_line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    border: solid #515151 1px;
+    margin-top: 10px;
+}
+
+
+.collaborator_line p{
+    font-size: 18px;
+    margin-right: 2rem;
+}
+
+
+.collaborator_line i {
+    margin-left:  3rem;
+    
+}
+
+
+.funder_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    height: 440px;
+    overflow-y: scroll;
+    margin-top: -1.5rem;
+}
+
+.sum{
+    color: #49ec3d;
+    font-size: 42px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+
+.funder_line{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #515151;
+    justify-content: space-between;
+    width: 660px;
+    margin-top: 15px;
+}
+
+.funder_line p{
+    font-size: 22px;
+}
+
+
+.ressources_up img, .ressources_down img{
+    width: 150px;
+    height: 150px;
+}
+
+.ressource{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.ressources_box{
+    border: white 2px solid;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 7rem;
+    height: 494px;
+    margin-top: -1.5rem;
+}
+
+
+.ressource p {
+    font-size: 38px;
+    font-weight: bold;
+    margin-right: 14rem;
+}
+
+.ressources_up{
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: row;
+}
+
+.ressources_down{
+    margin-top: 2rem;
+}
+
+.ressources_button{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.ressources_button button{
+    height: 70px;
+    width: 300px;
+    font-size:24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #3487d4;
+    color: white;
+    cursor: pointer;
+
+}
+
+
+
+input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+#scrollable::-webkit-scrollbar {
+    width: 8px;
+    background: inherit ;
+}
+
+#scrollable {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Scrollbar beim Hovern sichtbar machen */
+#scrollable:hover::-webkit-scrollbar {
+    width: 8px;
+}
+
+#scrollable:hover::-webkit-scrollbar-track {
+    background: rgba(183, 170, 223, 0.5);
+}
+
+#scrollable:hover::-webkit-scrollbar-thumb {
+    background: rgb(183, 170, 223);
+    border-radius: 4px;
+}
+
+#scrollable:hover::-webkit-scrollbar-thumb:hover {
+    background: rgb(205, 196, 232);
+}
+
+/* Scrollbar beim Scrollen sichtbar machen */
+#scrollable.scrolling::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    
+}
+
+#scrollable.scrolling::-webkit-scrollbar-track {
+    background: rgba(183, 170, 223, 0.5);
+}
+
+#scrollable.scrolling::-webkit-scrollbar-thumb {
+    background: rgb(183, 170, 223);
+    border-radius: 4px;
+}
+
+#scrollable.scrolling::-webkit-scrollbar-thumb:hover {
+    background: rgb(205, 196, 232);
+}
+
+#scrollable.scrolling {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(183, 170, 223, 0.5) rgb(183, 170, 223);
+}
+
+
+
+
+
+
+
+
+
+

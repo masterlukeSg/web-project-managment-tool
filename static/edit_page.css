@@ -1,0 +1,332 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body{
+    background-color:#2D2C34;
+    color: white;
+    font-family: Inter;
+    zoom: 95%;
+}
+
+.EP_UI{
+    display: flex;
+    flex-direction: column;
+}
+
+.EP_UI_Heading{
+    display: flex;
+    flex-direction: row;
+}
+
+.EP_UI_Heading img{
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.EP_UI_Heading h1{
+    font-size: 48px;
+    margin-left: 12px;
+    letter-spacing: -2.0px;
+}
+hr{
+    color: grey;
+    border-width: 1px;
+    margin-top: -3px;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    border-style: solid;
+    width: 100%;
+}
+
+.EP_UI_input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.EP_UI_input input, textarea{
+    background-color: #D9D7E2;
+    font-size: 22px;
+    width: 90%;
+    border-radius: 10px;
+    font-family: Inter;
+}
+
+#ProDes{
+    height: 150px;
+    margin-top: 40px;
+    padding: 10px 0 0 20px;
+    width: 88.2%;
+    border: none;
+}
+
+#ProNam {
+    height: 70px;
+    font-size: 32px;
+    padding: 0 0 0 20px;
+    width: 88.2%;
+}
+
+.EP_UI_horinput{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 89.8%;
+    margin-top: 40px;
+}
+
+.EP_UI_horinput input{
+    width: 45%;
+    height: 250px;
+}
+
+.EP_UI_editMF{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    width: 45%;
+}
+
+.EditMF_input{
+    display: flex;
+    flex-direction: row;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #D9D7E2;
+}
+
+.autocomplete-suggestions {
+    margin-top: 40px;
+    max-height: 150px;
+    width: 400px;
+    overflow-y: auto;
+    margin-left: 20px;
+    position: absolute;
+    background-color: white;
+    font-size: 20px;
+    color: black;
+    z-index: 1000;
+}
+.autocomplete-suggestion {
+    padding: 10px;
+    cursor: pointer;
+}
+.autocomplete-suggestion:hover {
+    background-color: #9c9b9b;
+    color:rgb(255, 255, 255);
+}
+
+#nameinput{
+    height: 50px;
+    width: 85%;
+    flex-grow: 2;
+    border: none;
+    padding: 0 0 0 20px;
+
+}
+
+#namesubmit{
+    height: 100%;
+    border-top-right-radius: 5px;
+    width: 10%;
+    background-color: #389678;
+    border:none;
+    cursor: pointer;
+    font-size:22px;
+}
+
+#namesubmit:hover{
+    background-color: #44a787;
+}
+
+ 
+.flash_list{
+    background-color: #D9D7E2;
+}
+
+.flash_list ul{
+    color: red;
+    list-style-type: none;
+}
+
+.mf_list{
+    background-color: #D9D7E2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: black;
+    margin-top: 0;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    list-style-type:none;
+}
+
+.mf_list li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.select_menu {
+    appearance: none; /* Entfernt das native Dropdown-Icon */
+    -webkit-appearance: none; /* Für Safari */
+    -moz-appearance: none; 
+
+    width: 100px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    background-color: #f3f3f3;
+    border: solid thin #00a3d7;
+    border-radius: 15px;
+    cursor: pointer;
+    background-image: url(/static/down-arrow-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+
+}
+
+.select_menu:focus{
+    outline: none;
+    border: solid thin #00fa72; 
+    background-image: url(/static/up-arrow-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.select_menu:hover{
+    background-color: #e9e9e9;
+}
+
+
+/*#00c7fc*/
+/*#00fa72*/
+
+
+.buttons_cr_ca{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin-top: 20px;
+}
+
+.EP_UI_back_to_d{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 78px;
+}
+
+.EP_UI_back_to_d button{
+    height: 50px;
+    width: 250px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #C92937;   /*1*/
+    transition: all 800ms;
+    overflow: hidden;
+    outline: 2px solid #C92937; /*1*/
+    cursor: pointer;
+}
+
+.EP_UI_back_to_d button p{
+    margin-left: 15px;
+}
+
+.EP_UI_back_to_d button:hover{
+    color: #fff;
+    transform: scale(1.1);
+    outline: 2px solid #de434f;  /*2*/
+    box-shadow: 4px 5px 17px -4px #b02430;  /*3*/
+}
+
+.EP_UI_back_to_d button::before{
+    content:"";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #C92937; /*1*/
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 800ms;
+}
+
+.EP_UI_back_to_d button:hover::before{
+    width: 250%;
+}
+
+.EP_UI_safe{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.EP_UI_safe button{
+    height: 50px;
+    width: 250px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #44a787;
+    transition: all 800ms;
+    overflow: hidden;
+    outline: 2px solid #44a787;
+    cursor: pointer;
+}
+
+.EP_UI_safe button p {
+    margin-left: 15px;
+}
+
+.EP_UI_safe button:hover{
+    color: #fff;
+    transform: scale(1.1);
+    outline: 2px solid #53c4a0;
+    box-shadow: 4px 5px 17px -4px #389678;
+}
+
+.EP_UI_safe button::before{
+    content:"";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #44a787;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 800ms;
+}
+
+.EP_UI_safe button:hover::before{
+    width: 250%;
+}
+
+input:focus,
+textarea:focus{
+    outline: none;
+}
