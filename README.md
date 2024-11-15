@@ -1,6 +1,8 @@
 # Scientific Project Management Tool: ScienceHUB
 ---
-**Dies ist eine einfache Projektverwaltungsanwendung, die auf Flask basiert. Sie ermöglicht die Erstellung, Bearbeitung und Verwaltung von Projekten sowie die Verwaltung von Projektmitgliedern und Geldgebern (Fundern). Benutzer können Projekte anpassen, Mitgliederrollen ändern, und Projektdaten speichern.**
+**This is a simple project management application based on Flask. It enables users to create, edit, and manage projects, as well as handle project members and funders. Users can customize projects, update member roles, and save project data.
+
+Additionally, the tool is designed for managing scientific projects, including resource and collaboration management. It features a local web interface built with HTML and CSS, with a SQL-based database implemented to store user registrations and project data. Agile methodologies such as Scrum and Kanban were employed for project management, while Docker was used for containerization, and SonarQube was integrated for code quality analysis.**
 
 
 ## Anforderungen
